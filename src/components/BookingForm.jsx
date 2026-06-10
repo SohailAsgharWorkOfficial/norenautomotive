@@ -4,15 +4,29 @@ import { assets } from '../assets.js';
 export default function BookingForm({ compact = false }) {
   if (compact) {
     return (
-      <form className="booking-card booking-card-light">
+      <form className="booking-card booking-card-compact">
         <h3>Book Your Service</h3>
-        {['Name', 'Phone', 'Vehicle Model', 'Service', 'Location'].map((field) => (
+        {['Full Name', 'Vehicle Model', 'Phone No.', 'Select Service', 'Location'].map((field) => (
           <label key={field}>
             <span>{field}</span>
-            <input type="text" placeholder={field} />
+            {field === 'Phone No.' ? (
+              <div className="phone-field compact">
+                <em>+92</em>
+                <input type="text" placeholder="000-0000000" />
+              </div>
+            ) : field === 'Select Service' ? (
+              <select defaultValue="">
+                <option value="" disabled>Select Service</option>
+                <option>Oil Change</option>
+                <option>Car Inspection</option>
+                <option>General Service</option>
+              </select>
+            ) : (
+              <input type="text" placeholder={field === 'Location' ? 'Enter Your Location' : 'Enter Your full Name'} />
+            )}
           </label>
         ))}
-        <button type="button">Book A Service</button>
+        <button type="button">Book a Service</button>
       </form>
     );
   }

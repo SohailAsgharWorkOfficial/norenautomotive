@@ -3,6 +3,11 @@ export const assets = {
   hero: '/assets/home-hero.png',
   bookingLogo: '',
   howItWorks: '/assets/placeholder-how-it-works-car.png',
+  testimonialAvatars: [
+    '/assets/testimonials/avatar-ali.svg',
+    '/assets/testimonials/avatar-ahmed.svg',
+    '/assets/testimonials/avatar-usman.svg',
+  ],
   brands: [
     { name: 'TOYOTA', path: '/assets/brands/toyota.svg' },
     { name: 'SUZUKI', path: '/assets/brands/suzuki.svg' },

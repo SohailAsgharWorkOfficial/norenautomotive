@@ -18,7 +18,7 @@ export default function VehiclesSection() {
         <div className="vehicle-cards">
           {vehicles.map(([title, text]) => (
             <article className="vehicle-card" key={title}>
-              <img src="/assets/placeholder-team-card.jpg" alt={`${title} service placeholder`} />
+              <img src="/assets/placeholder-team-card.png" alt={`${title} service placeholder`} />
               <h3>{title}</h3>
               <p>{text}</p>
             </article>

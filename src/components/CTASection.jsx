@@ -5,7 +5,7 @@ export default function CTASection() {
   return (
     <section className="cta" id="book">
       <div className="container cta-grid">
-        <div>
+        <div className="cta-copy">
           <h2>Book Your Service Today & Drive With Confidence</h2>
           <p>
             From routine maintenance to quick repairs, our certified technicians are just a booking
