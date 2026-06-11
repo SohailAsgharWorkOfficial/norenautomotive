@@ -13,6 +13,7 @@ import FAQSection from './components/FAQSection.jsx';
 import Footer from './components/Footer.jsx';
 import ServicesPage from './components/ServicesPage.jsx';
 import PackagesPage from './components/PackagesPage.jsx';
+import WhatsAppFloat from './components/WhatsAppFloat.jsx';
 
 export default function App() {
   const path = window.location.pathname;
@@ -20,11 +21,21 @@ export default function App() {
   const isPackagesPage = path === '/packages';
 
   if (isServicesPage) {
-    return <ServicesPage />;
+    return (
+      <>
+        <ServicesPage />
+        <WhatsAppFloat />
+      </>
+    );
   }
 
   if (isPackagesPage) {
-    return <PackagesPage />;
+    return (
+      <>
+        <PackagesPage />
+        <WhatsAppFloat />
+      </>
+    );
   }
 
   return (
@@ -43,6 +54,7 @@ export default function App() {
         <FAQSection />
       </main>
       <Footer />
+      <WhatsAppFloat />
     </>
   );
 }
