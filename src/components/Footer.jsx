@@ -52,7 +52,7 @@ export default function Footer() {
           <p>&copy; 2026 Noren Automotive. All Rights Reserved.</p>
           <div className="footer-socials">
             <a href="#" aria-label="Facebook"><Facebook size={18} /></a>
-            <a href="#" aria-label="Instagram"><Instagram size={18} /></a>
+            <a href="https://www.instagram.com/noren.automotive/" aria-label="Instagram"><Instagram size={18} /></a>
             <a href="#" aria-label="Twitter"><Twitter size={18} /></a>
           </div>
         </div>
