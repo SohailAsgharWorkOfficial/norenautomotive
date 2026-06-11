@@ -62,7 +62,7 @@ const trustItems = [
 export default function ServicesPage() {
   return (
     <>
-      <Navbar className="navbar-services" />
+      <Navbar />
       <main className="services-page" id="home">
         <section className="services-hero" id="top" aria-label="Doorstep car service">
           <div className="container services-hero-inner">

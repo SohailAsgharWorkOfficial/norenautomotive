@@ -12,12 +12,19 @@ import CTASection from './components/CTASection.jsx';
 import FAQSection from './components/FAQSection.jsx';
 import Footer from './components/Footer.jsx';
 import ServicesPage from './components/ServicesPage.jsx';
+import PackagesPage from './components/PackagesPage.jsx';
 
 export default function App() {
-  const isServicesPage = window.location.pathname === '/services';
+  const path = window.location.pathname;
+  const isServicesPage = path === '/services';
+  const isPackagesPage = path === '/packages';
 
   if (isServicesPage) {
     return <ServicesPage />;
+  }
+
+  if (isPackagesPage) {
+    return <PackagesPage />;
   }
 
   return (
