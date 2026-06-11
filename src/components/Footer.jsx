@@ -49,7 +49,7 @@ export default function Footer() {
 
       <div className="footer-bottom">
         <div className="container footer-bottom-inner">
-          <p>© 2026 Noren Automotive. All Rights Reserved.</p>
+          <p>&copy; 2026 Noren Automotive. All Rights Reserved.</p>
           <div className="footer-socials">
             <a href="#" aria-label="Facebook"><Facebook size={18} /></a>
             <a href="#" aria-label="Instagram"><Instagram size={18} /></a>

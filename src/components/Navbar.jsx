@@ -9,8 +9,8 @@ export default function Navbar() {
           <img src={assets.logo} alt="Noren Automotive" />
         </a>
         <nav className="nav-links" aria-label="Primary navigation">
-          <a href="#home">Home</a>
-          <a href="#services">Services</a>
+          <a href="/">Home</a>
+          <a href="/services">Services</a>
           <a href="#packages">Packages</a>
           <a href="#about">About</a>
           <a href="#faq">FAQs</a>

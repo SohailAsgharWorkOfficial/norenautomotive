@@ -11,8 +11,15 @@ import Testimonials from './components/Testimonials.jsx';
 import CTASection from './components/CTASection.jsx';
 import FAQSection from './components/FAQSection.jsx';
 import Footer from './components/Footer.jsx';
+import ServicesPage from './components/ServicesPage.jsx';
 
 export default function App() {
+  const isServicesPage = window.location.pathname === '/services';
+
+  if (isServicesPage) {
+    return <ServicesPage />;
+  }
+
   return (
     <>
       <Navbar />
