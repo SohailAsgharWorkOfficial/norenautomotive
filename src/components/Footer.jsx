@@ -11,7 +11,7 @@ export default function Footer() {
             <h2>Professional Car Care, Delivered to Your Door</h2>
             <p>Fast, reliable, and convenient vehicle servicing wherever you are.</p>
           </div>
-          <a className="footer-book" href="#book">Book a Service</a>
+          <a className="footer-book" href="/#book">Book a Service</a>
           <div className="footer-logo-wrap">
             <img src={assets.logo} alt="Noren Automotive" />
           </div>
@@ -22,21 +22,21 @@ export default function Footer() {
         <div className="container footer-grid">
           <div>
             <h3>Quick Links</h3>
-            <a href="#home">Home</a>
-            <a href="#about">About Us</a>
-            <a href="#services">Services</a>
-            <a href="#how">How It Works</a>
-            <a href="#reviews">Testimonials</a>
-            <a href="#contact">Contact</a>
+            <a href="/">Home</a>
+            <a href="/about">About Us</a>
+            <a href="/services">Services</a>
+            <a href="/#how">How It Works</a>
+            <a href="/#reviews">Testimonials</a>
+            <a href="/#contact">Contact</a>
           </div>
           <div>
             <h3>Our Services</h3>
-            <a href="#services">Oil Change</a>
-            <a href="#services">Battery Service</a>
-            <a href="#services">Brake Service</a>
-            <a href="#services">AC Service</a>
-            <a href="#services">Vehicle Diagnostics</a>
-            <a href="#services">General Maintenance</a>
+            <a href="/services">Oil Change</a>
+            <a href="/services">Battery Service</a>
+            <a href="/services">Brake Service</a>
+            <a href="/services">AC Service</a>
+            <a href="/services">Vehicle Diagnostics</a>
+            <a href="/services">General Maintenance</a>
           </div>
           <div>
             <h3>Contact Info</h3>

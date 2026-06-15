@@ -5,6 +5,8 @@ export default function Navbar({ className = '' }) {
   const path = window.location.pathname;
   const isServicesPage = path === '/services';
   const isPackagesPage = path === '/packages';
+  const isAboutPage = path === '/about';
+  const isFAQPage = path === '/faq';
   const isHomePage = path === '/';
 
   return (
@@ -17,11 +19,11 @@ export default function Navbar({ className = '' }) {
           <a className={isHomePage ? 'active' : undefined} href="/">Home</a>
           <a className={isServicesPage ? 'active' : undefined} href="/services">Services</a>
           <a className={isPackagesPage ? 'active' : undefined} href="/packages">Packages</a>
-          <a href="/#about">About</a>
-          <a href="/#faq">FAQs</a>
+          <a className={isAboutPage ? 'active' : undefined} href="/about">About</a>
+          <a className={isFAQPage ? 'active' : undefined} href="/faq">FAQs</a>
           <a href="/#contact">Contact</a>
         </nav>
-        <a className="nav-cta" href={isPackagesPage ? '#packages' : isServicesPage ? '#book' : '/#book'}>Book Now</a>
+        <a className="nav-cta" href={isPackagesPage ? '#packages' : (isServicesPage || isAboutPage || isFAQPage) ? '#book' : '/#book'}>Book Now</a>
       </div>
     </header>
   );
