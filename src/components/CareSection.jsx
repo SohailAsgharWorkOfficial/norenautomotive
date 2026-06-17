@@ -1,10 +1,22 @@
 import React from 'react';
-import { BadgeCheck, Clock, MapPin } from 'lucide-react';
+import { assets } from '../assets.js';
 
 const careItems = [
-  ['Certified Technicians', 'Our skilled professionals are trained to handle a wide range of vehicle maintenance concerns, ensuring your car receives expert care every time.', BadgeCheck],
-  ['Convenient Doorstep Service', 'Wherever you are, our mobile service teams arrive fully equipped to complete efficient, reliable service without workshop delays.', Clock],
-  ['Transparent & Fair Pricing', 'Clear packages and upfront rates give you confidence before work begins, with no hidden surprises.', MapPin],
+  {
+    title: 'Certified Technicians',
+    text: 'Our skilled professionals are trained to handle a wide range of vehicle maintenance concerns, ensuring your car receives expert care every time.',
+    iconKey: 'certifiedIcon',
+  },
+  {
+    title: 'Convenient Doorstep Service',
+    text: 'Wherever you are, our mobile service teams arrive fully equipped to complete efficient, reliable service without workshop delays.',
+    iconKey: 'doorstepIcon',
+  },
+  {
+    title: 'Transparent & Fair Pricing',
+    text: 'Clear packages and upfront rates give you confidence before work begins, with no hidden surprises.',
+    iconKey: 'pricingIcon',
+  },
 ];
 
 export default function CareSection() {
@@ -23,9 +35,18 @@ export default function CareSection() {
             <div className="photo-caption"><span></span> 100+ Cars Serviced<br />Expert Mobile Mechanic Team</div>
           </div>
           <div className="care-list">
-            {careItems.map(([title, text, Icon]) => (
+            {careItems.map(({ title, text, iconKey }) => (
               <article className="care-item" key={title}>
-                <span><Icon size={18} /></span>
+             
+                <span>
+                  <div className="care-item-icon-wrap">
+  <img 
+    src={assets[iconKey]} 
+    alt={title} 
+    style={{ width: '60px', height: '60px', objectFit: 'contain', display: 'block' }} 
+  />
+</div>
+                </span>
                 <div>
                   <h3>{title}</h3>
                   <p>{text}</p>

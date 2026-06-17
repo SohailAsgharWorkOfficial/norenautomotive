@@ -6,13 +6,12 @@ import {
   Mail,
   MapPin,
   Search,
-  ShieldCheck,
   Sparkles,
   Stethoscope,
-  Wrench,
 } from 'lucide-react';
 import Navbar from './Navbar.jsx';
 import Footer from './Footer.jsx';
+import { assets } from '../assets.js'; 
 
 const categories = [
   { title: 'General Services', icon: Grid2X2 },
@@ -26,8 +25,7 @@ const categories = [
 const faqItems = [
   {
     question: 'What services does Noren Automotive provide?',
-    answer:
-      'We provide doorstep oil changes, diagnostics, battery support, inspection, general maintenance, and quick repair assistance across Karachi.',
+    answer: 'We provide doorstep oil changes, diagnostics, battery support, inspection, general maintenance, and quick repair assistance across Karachi.',
   },
   {
     question: 'What types of vehicles do you service?',
@@ -35,30 +33,28 @@ const faqItems = [
   },
   {
     question: 'How long does a typical service take?',
-    answer:
-      'Most routine services take 45 to 90 minutes, depending on the service type, vehicle condition, and required inspection work.',
+    answer: 'Most routine services take 45 to 90 minutes, depending on the service type, vehicle condition, and required inspection work.',
   },
   {
     question: 'Do you use professional equipment?',
-    answer:
-      'Yes. Our technicians arrive with professional tools, diagnostic equipment, and quality service products for reliable doorstep care.',
+    answer: 'Yes. Our technicians arrive with professional tools, diagnostic equipment, and quality service products for reliable doorstep care.',
   },
   {
     question: 'Why choose Noren Automotive?',
-    answer:
-      'You save time, avoid workshop queues, get transparent pricing, and receive professional car care at your preferred location.',
+    answer: 'You save time, avoid workshop queues, get transparent pricing, and receive professional car care at your preferred location.',
   },
-];
-
-const benefits = [
-  { title: 'Certified Technicians', icon: ShieldCheck },
-  { title: 'Doorstep Convenience', icon: Car },
-  { title: 'Transparent Pricing', icon: Wrench },
 ];
 
 export default function FAQPage() {
   const [openIndex, setOpenIndex] = useState(1);
   const [query, setQuery] = useState('');
+
+  // बदलाव: benefits को कॉम्पोनेंट के अंदर ले आए ताकि assets का सही पाथ लोड हो सके
+  const benefits = [
+    { title: 'Certified Technicians', iconImg: assets.certifiedIcon },
+    { title: 'Doorstep Convenience', iconImg: assets.doorstepIcon },
+    { title: 'Transparent Pricing', iconImg: assets.pricingIcon },
+  ];
 
   const visibleFaqs = useMemo(() => {
     const normalized = query.trim().toLowerCase();
@@ -155,9 +151,13 @@ export default function FAQPage() {
                 whenever you need it.
               </p>
               <div className="faq-benefits">
-                {benefits.map(({ title, icon: Icon }) => (
+                {benefits.map(({ title, iconImg }) => (
                   <div key={title}>
-                    <Icon size={34} />
+                    <img 
+                      src={iconImg} 
+                      alt={title} 
+                      style={{ width: '34px', height: '34px', display: 'block', objectFit: 'contain' }} 
+                    />
                     <strong>{title}</strong>
                   </div>
                 ))}

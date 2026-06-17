@@ -51,7 +51,7 @@ img {
   left: 0;
   right: 0;
   height: 55px;
-  background: var(--blue);
+  background: #05153b;
   color: white;
 }
 
@@ -78,7 +78,7 @@ img {
   display: grid;
   place-items: center;
   border-radius: 4px;
-  background: var(--red);
+  
   color: white;
   font-size: 16px;
   font-weight: 900;
@@ -728,10 +728,26 @@ img {
   line-height: 1.55;
 }
 
+.care-item span {
+  background: none !important;      
+  border-radius: 0 !important;      
+  padding: 0 !important;            
+  width: auto;                      
+  height: auto;
+}
+
+
+.faq-benefits div span, 
+.faq-benefits div img {
+  background: transparent !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+
 .vehicles {
   position: relative;
   padding: 18px 0 0;
-  background: linear-gradient(180deg, white 0 47%, #1498e7 47% 100%);
+  background: linear-gradient(180deg, white 0 47%, #1F6ABC 47% 100%);
 }
 
 .vehicle-hero {
@@ -777,7 +793,7 @@ img {
 
 .testimonials {
   padding: 18px 0 38px;
-  background: linear-gradient(180deg, #2a79d7 0%, #0b4098 42%, #0a3a8b 100%);
+  background: #1F6ABC;
   color: white;
   text-align: center;
 }

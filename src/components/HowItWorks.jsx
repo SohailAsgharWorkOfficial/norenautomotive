@@ -1,7 +1,20 @@
 import React from 'react';
 import { assets } from '../assets.js';
 
-const steps = ['Book Your Service', 'Book Your Service', 'Book Your Service'];
+const steps = [
+  {
+    title: 'Book Your Service',
+    description: 'Choose your required service and schedule a convenient appointment with our team.'
+  },
+  {
+    title: 'We Come To You',
+    description: 'Our technician arrives on-site fully equipped to perform the requested service.'
+  },
+  {
+    title: 'Drive With Confidence',
+    description: 'We complete the job professionally and ensure your vehicle is road-ready.'
+  }
+];
 
 export default function HowItWorks() {
   return (
@@ -12,10 +25,10 @@ export default function HowItWorks() {
           <p>Getting your car serviced has never been easier.</p>
           <div className="steps">
             {steps.map((step, index) => (
-              <article className="step" key={`${step}-${index}`}>
+              <article className="step" key={index}>
                 <span>{index + 1}</span>
-                <h3>{step}</h3>
-                <p>Pick the service, confirm your location, and our expert team handles the rest.</p>
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
               </article>
             ))}
           </div>
