@@ -419,6 +419,104 @@ img {
   color: #e6f5ff;
 }
 
+.fuel-section {
+  padding: 4px 0 0;
+  background: #020202;
+  color: #ffffff;
+}
+
+.fuel-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 36px;
+  padding: 0 0 28px;
+}
+
+.fuel-head h2 {
+  max-width: 880px;
+  margin: 0 0 12px;
+  color: #ffffff;
+  font-size: 28px;
+  line-height: 1.14;
+  font-weight: 900;
+}
+
+.fuel-head p {
+  max-width: 880px;
+  margin: 0;
+  color: #b7bdc7;
+  font-size: 12px;
+  line-height: 1.58;
+}
+
+.fuel-head a {
+  flex: 0 0 auto;
+  min-width: 176px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  background: var(--red);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.fuel-visual {
+  min-height: 360px;
+  display: grid;
+  align-items: center;
+  padding: 34px 0 42px;
+  background:
+    linear-gradient(90deg, rgba(2, 2, 2, .96) 0%, rgba(2, 2, 2, .78) 37%, rgba(2, 2, 2, .18) 68%, rgba(2, 2, 2, .05) 100%),
+    url('/assets/services/hero-service-page.png') center / cover no-repeat;
+}
+
+.fuel-card-stack {
+  width: min(100%, 470px);
+  display: grid;
+  gap: 15px;
+}
+
+.fuel-card-stack > span {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.fuel-solution {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 15px;
+  align-items: start;
+  padding: 18px 18px;
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 6px;
+  background: linear-gradient(90deg, rgba(34, 39, 47, .9), rgba(18, 21, 27, .68));
+  box-shadow: 0 14px 30px rgba(0, 0, 0, .3);
+}
+
+.fuel-solution svg {
+  margin-top: 2px;
+  color: var(--red);
+}
+
+.fuel-solution h3 {
+  margin: 0 0 7px;
+  color: #ffffff;
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+.fuel-solution p {
+  margin: 0;
+  color: #b9c0cb;
+  font-size: 10px;
+  line-height: 1.45;
+}
+
 .packages {
   padding: 58px 0 74px;
   background: linear-gradient(180deg, #fff 0%, #f7f9fd 100%);
@@ -1212,6 +1310,16 @@ img {
     grid-template-columns: 1fr 1fr;
   }
 
+  .fuel-head {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .fuel-visual {
+    min-height: 340px;
+    background-position: center;
+  }
+
   .package-cards,
   .how-wrap,
   .footer-grid {
@@ -1280,6 +1388,23 @@ img {
   .service-grid,
   .vehicle-cards {
     grid-template-columns: 1fr;
+  }
+
+  .fuel-head h2 {
+    font-size: 23px;
+  }
+
+  .fuel-visual {
+    min-height: 0;
+    padding: 28px 14px 34px;
+    background:
+      linear-gradient(90deg, rgba(2, 2, 2, .92), rgba(2, 2, 2, .7)),
+      url('/assets/services/hero-service-page.png') center / cover no-repeat;
+  }
+
+  .fuel-solution {
+    grid-template-columns: 28px 1fr;
+    padding: 15px;
   }
 
   .testimonial-card.dim {

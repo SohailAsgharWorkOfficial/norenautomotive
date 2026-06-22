@@ -3,6 +3,7 @@ import Navbar from './components/Navbar.jsx';
 import HeroSection from './components/HeroSection.jsx';
 import BrandStrip from './components/BrandStrip.jsx';
 import ServicesSection from './components/ServicesSection.jsx';
+import FuelSupplySection from './components/FuelSupplySection.jsx';
 import PackagesSection from './components/PackagesSection.jsx';
 import HowItWorks from './components/HowItWorks.jsx';
 import CareSection from './components/CareSection.jsx';
@@ -67,6 +68,7 @@ export default function App() {
         <HeroSection />
         <BrandStrip />
         <ServicesSection />
+        <FuelSupplySection />
         <PackagesSection />
         <HowItWorks />
         <CareSection />

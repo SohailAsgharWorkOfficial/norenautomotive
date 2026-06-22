@@ -8,12 +8,15 @@ export default function BrandStrip() {
         <h2>Expert Auto Care</h2>
         <p>Servicing all vehicle makes with precision and reliability.</p>
         <div className="brand-row">
-          {assets.brands.map((brand) => (
-            <div className="brand-logo" key={brand.name}>
-              <img src={brand.path} alt={brand.name} />
-              <small>{brand.name}</small>
-            </div>
-          ))}
+          {assets.brands.map((brand) => {
+            const name = brand.path.split('/').pop().replace('.svg', '');
+            return (
+              <div className="brand-logo" key={name}>
+                <img src={brand.path} alt={`${name} logo`} />
+                <small>{name}</small>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
