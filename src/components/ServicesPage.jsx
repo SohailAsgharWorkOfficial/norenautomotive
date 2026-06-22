@@ -59,6 +59,21 @@ const trustItems = [
   ['Better Vehicle Performance', 'Quality components help your vehicle perform at its best.'],
 ];
 
+const fuelSolutions = [
+  [
+    'High-Speed Diesel & Petrol',
+    'Reliable bulk fuel supply for commercial, industrial, transportation, and construction operations with consistent quality and dependable availability.',
+  ],
+  [
+    'Fleet Fuel Programs',
+    'Tailored fuel programs designed for fleet operators and large-scale businesses, helping streamline fuel management and reduce operational inefficiencies.',
+  ],
+  [
+    'Fuel Logistics & Supply Management',
+    'End-to-end fuel coordination, procurement, and delivery management that ensures timely supply and operational continuity.',
+  ],
+];
+
 export default function ServicesPage() {
   return (
     <>
@@ -110,6 +125,29 @@ export default function ServicesPage() {
           </div>
         </section>
 
+        <section className="services-fuel">
+          <div className="container">
+            <div className="services-fuel-hero">
+              <div className="services-fuel-card">
+                <h2>Reliable Fuel Supply for Uninterrupted Operations</h2>
+                <p>
+                  Strategic petroleum sourcing, logistics coordination, and supply management solutions designed to keep
+                  businesses moving efficiently across Pakistan.
+                </p>
+                <a href="#book">Discuss Fuel Requirements</a>
+              </div>
+            </div>
+            <div className="services-fuel-grid">
+              {fuelSolutions.map(([title, text]) => (
+                <article className="services-fuel-solution" key={title}>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="services-map" id="book">
           <div className="services-map-overlay">
             <div className="container services-map-grid">
@@ -140,7 +178,7 @@ export default function ServicesPage() {
                 <img src="/assets/services/trusted-brands.png" alt="Trusted oils, batteries, filters and brake parts" />
               </div>
               <div className="trusted-copy">
-                <h2>QUALITY YOU CAN TRUST</h2>
+                <h2>Quality you can trust</h2>
                 <div className="trust-list">
                   {trustItems.map(([title, text]) => (
                     <div className="trust-item" key={title}>

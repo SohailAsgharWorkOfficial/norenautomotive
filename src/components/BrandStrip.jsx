@@ -13,7 +13,7 @@ export default function BrandStrip() {
             return (
               <div className="brand-logo" key={name}>
                 <img src={brand.path} alt={`${name} logo`} />
-                <small>{name}</small>
+                {/* <small>{name}</small> */}
               </div>
             );
           })}

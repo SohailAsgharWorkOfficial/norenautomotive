@@ -45,14 +45,15 @@ img {
 }
 
 .navbar {
-  position: absolute;
-  z-index: 10;
+  position: fixed;
+  z-index: 100;
   top: 0;
   left: 0;
   right: 0;
   height: 55px;
   background: #05153b;
   color: white;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .18);
 }
 
 .nav-inner {
@@ -471,7 +472,7 @@ img {
   padding: 34px 0 42px;
   background:
     linear-gradient(90deg, rgba(2, 2, 2, .96) 0%, rgba(2, 2, 2, .78) 37%, rgba(2, 2, 2, .18) 68%, rgba(2, 2, 2, .05) 100%),
-    url('/assets/services/hero-service-page.png') center / cover no-repeat;
+    url('/assets/services/fuel-soln.png') center / cover no-repeat;
 }
 
 .fuel-card-stack {
@@ -488,7 +489,7 @@ img {
 
 .fuel-solution {
   display: grid;
-  grid-template-columns: 34px 1fr;
+  grid-template-columns: 324px 1fr;
   gap: 15px;
   align-items: start;
   padding: 18px 18px;
@@ -1168,7 +1169,7 @@ img {
 
 .footer-top-inner {
   position: relative;
-  min-height: 112px;
+  min-height: 132px;
 }
 
 .footer-top-copy {
@@ -1403,7 +1404,7 @@ img {
   }
 
   .fuel-solution {
-    grid-template-columns: 28px 1fr;
+    grid-template-columns: 228px 1fr;
     padding: 15px;
   }
 
@@ -3048,7 +3049,7 @@ img {
   max-width: 425px;
   margin: 0 0 9px;
   color: #fff;
-  font-size: 21px;
+  font-size: 28px;
   line-height: 1.08;
   font-weight: 500;
   letter-spacing: 0;
@@ -3057,7 +3058,7 @@ img {
 .footer-top-copy p {
   margin: 0;
   color: #fff;
-  font-size: 10px;
+  font-size: 15px;
   line-height: 1.25;
   font-weight: 400;
 }
@@ -3066,15 +3067,17 @@ img {
   position: absolute;
   top: 27px;
   right: 0;
-  min-width: 80px;
-  height: 22px;
-  padding: 0 11px;
+  min-width: 120px;
+  height: 32px;
+  padding: 0 14px;
   border-radius: 2px;
   background: #ffc107;
   color: #000;
-  font-size: 7px;
-  line-height: 1;
+  font-size: 12px;
+  line-height: 32px;
+  text-align: center;
   font-weight: 800;
+  text-decoration: none;
 }
 
 .footer-logo-wrap {
@@ -3120,9 +3123,9 @@ img {
 }
 
 .footer-grid h3 {
-  margin: 0 0 13px;
+  margin: 0 0 16px;
   color: #fff;
-  font-size: 10px;
+  font-size: 16px;
   line-height: 1;
   font-weight: 700;
 }
@@ -3130,11 +3133,12 @@ img {
 .footer-grid a,
 .footer-grid p {
   display: block;
-  margin: 0 0 8px;
+  margin: 0 0 12px;
   color: #fff;
-  font-size: 8px;
+  font-size: 14px;
   line-height: 1;
   font-weight: 400;
+  text-decoration: none;
 }
 
 .footer-bottom {
@@ -3155,7 +3159,7 @@ img {
 .footer-bottom p {
   margin: 0;
   color: #fff;
-  font-size: 8px;
+  font-size: 13px;
   line-height: 1;
   font-weight: 400;
 }
@@ -3202,7 +3206,7 @@ img {
 
   .footer-top-copy h2 {
     max-width: 290px;
-    font-size: 21px;
+    font-size: 24px;
   }
 
   .footer-book {
@@ -3426,6 +3430,94 @@ img {
   font-weight: 800;
 }
 
+.services-fuel {
+  padding: 0 0 58px;
+  background: #fff;
+}
+
+.services-fuel-hero {
+  min-height: 258px;
+  display: flex;
+  align-items: center;
+  padding: 30px 0;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 255) 35%, rgba(255, 255, 255, .08) 60%, rgba(255, 255, 255, 0) 100%),
+    url('/assets/services/fuel-soln.png') center / cover no-repeat;
+}
+
+.services-fuel-card {
+  width: min(100%, 520px);
+  min-height: 188px;
+  display: grid;
+  align-content: center;
+  padding: 28px 26px 26px;
+  border-radius: 5px;
+  background: #082a7c;
+  color: #fff;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, .22);
+}
+
+.services-fuel-card h2 {
+  max-width: 430px;
+  margin: 0 0 14px;
+  color: #fff;
+  font-size: 28px;
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.services-fuel-card p {
+  max-width: 430px;
+  margin: 0 0 20px;
+  color: rgba(255, 255, 255, .78);
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.services-fuel-card a {
+  width: 168px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  background: #e00012;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.services-fuel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.services-fuel-solution {
+  min-height: 105px;
+  padding: 18px 20px;
+  border: 1px solid #d8d8d8;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 6px 11px rgba(0, 0, 0, .14);
+}
+
+.services-fuel-solution h3 {
+  margin: 0 0 9px;
+  color: #1d1d1d;
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.services-fuel-solution p {
+  margin: 0;
+  color: #69717d;
+  font-size: 10px;
+  line-height: 1.4;
+}
+
 .services-map {
   min-height: 418px;
   background: url('/assets/services/karachi-map-clean.png') center / cover no-repeat;
@@ -3632,6 +3724,10 @@ img {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .services-fuel-grid {
+    grid-template-columns: 1fr;
+  }
+
   .services-map-grid,
   .trusted-grid {
     grid-template-columns: 1fr;
@@ -3665,6 +3761,23 @@ img {
 
   .services-page-grid {
     grid-template-columns: 1fr;
+  }
+
+  .services-fuel {
+    padding-bottom: 42px;
+  }
+
+  .services-fuel-hero {
+    min-height: 300px;
+    padding: 22px 14px;
+  }
+
+  .services-fuel-card {
+    padding: 22px 18px;
+  }
+
+  .services-fuel-card h2 {
+    font-size: 22px;
   }
 
   .services-map-overlay {
@@ -5101,5 +5214,172 @@ img {
 
   .faq-service-cta-inner::before {
     border-radius: 0 56px 56px 0;
+  }
+}
+
+/* --- NEW FOOTER CSS --- */
+.site-footer {
+  width: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.site-footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Top Section */
+.footer-top-section {
+  background-color: #082a7c;
+  position: relative;
+  padding: 40px 0;
+  min-height: 140px;
+}
+
+.footer-top-content {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-headings h2 {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 500;
+  margin: 0 0 10px 0;
+}
+
+.footer-headings p {
+  color: #e2e8f0;
+  font-size: 15px;
+  margin: 0;
+}
+
+.footer-top-actions {
+  margin-top: 5px;
+}
+
+.btn-book-service {
+  background-color: #facc15;
+  color: #000000;
+  padding: 10px 24px;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.footer-overlap-logo {
+  position: absolute;
+  right: 20px;
+  bottom: -90px;
+  background-color: #082a7c;
+  width: 160px;
+  height: 80px;
+  border-radius: 0 0 80px 80px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 10px;
+  z-index: 10;
+}
+
+.footer-overlap-logo img {
+  width: 120px;
+  height: auto;
+}
+
+/* Middle Section */
+.footer-middle-section {
+  background-color: #000000;
+  padding: 80px 0 60px 0;
+}
+
+.footer-links-grid {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-column h4 {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 24px 0;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 6px;
+  color: #cbd5e1;
+  font-size: 14px;
+}
+
+.footer-column ul li a {
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-column ul li a:hover {
+  color: #ffffff;
+}
+
+/* Bottom Section */
+.footer-bottom-section {
+  background-color: #082a7c;
+  padding: 20px 0;
+}
+
+.footer-bottom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright {
+  color: #cbd5e1;
+  font-size: 13px;
+  margin: 0;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-links a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  color: #cbd5e1;
+}
+
+@media (max-width: 768px) {
+  .footer-top-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .footer-overlap-logo {
+    display: none;
+  }
+  .footer-links-grid {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .footer-bottom-content {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
   }
 }

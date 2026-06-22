@@ -4,56 +4,71 @@ import { assets } from '../assets.js';
 
 export default function Footer() {
   return (
-    <footer className="footer" id="contact">
-      <div className="footer-top">
-        <div className="container footer-top-inner">
-          <div className="footer-top-copy">
+    <footer className="site-footer" id="contact">
+      {/* Top Section */}
+      <div className="footer-top-section">
+        <div className="container footer-top-content">
+          <div className="footer-headings">
             <h2>Professional Car Care, Delivered to Your Door</h2>
             <p>Fast, reliable, and convenient vehicle servicing wherever you are.</p>
           </div>
-          <a className="footer-book" href="/#book">Book a Service</a>
-          <div className="footer-logo-wrap">
+          <div className="footer-top-actions">
+            <a href="/#book" className="btn-book-service">Book a Service</a>
+          </div>
+          
+          {/* Logo overlapping element */}
+          <div className="footer-overlap-logo">
             <img src={assets.logo} alt="Noren Automotive" />
           </div>
         </div>
       </div>
 
-      <div className="footer-main">
-        <div className="container footer-grid">
-          <div>
-            <h3>Quick Links</h3>
-            <a href="/">Home</a>
-            <a href="/about">About Us</a>
-            <a href="/services">Services</a>
-            <a href="/#how">How It Works</a>
-            <a href="/#reviews">Testimonials</a>
-            <a href="/#contact">Contact</a>
+      {/* Middle Section */}
+      <div className="footer-middle-section">
+        <div className="container footer-links-grid">
+          <div className="footer-column">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/services">Services</a></li>
+              <li><a href="/#how">How It Works</a></li>
+              <li><a href="/#reviews">Testimonials</a></li>
+              <li><a href="/#contact">Contact</a></li>
+            </ul>
           </div>
-          <div>
-            <h3>Our Services</h3>
-            <a href="/services">Oil Change</a>
-            <a href="/services">Battery Service</a>
-            <a href="/services">Brake Service</a>
-            <a href="/services">AC Service</a>
-            <a href="/services">Vehicle Diagnostics</a>
-            <a href="/services">General Maintenance</a>
+          
+          <div className="footer-column">
+            <h4>Our Services</h4>
+            <ul>
+              <li><a href="/services">Oil Change</a></li>
+              <li><a href="/services">Battery Service</a></li>
+              <li><a href="/services">Brake Service</a></li>
+              <li><a href="/services">AC Service</a></li>
+              <li><a href="/services">Vehicle Diagnostics</a></li>
+              <li><a href="/services">General Maintenance</a></li>
+            </ul>
           </div>
-          <div>
-            <h3>Contact Info</h3>
-            <p>0314 113859</p>
-            <p>Karachi, Pakistan</p>
-            <p>Tue - Sun</p>
+          
+          <div className="footer-column">
+            <h4>Contact Info</h4>
+            <ul>
+              <li>0314 1133859</li>
+              <li>Karachi, Pakistan</li>
+              <li>Tue - Sun</li>
+            </ul>
           </div>
         </div>
       </div>
 
-      <div className="footer-bottom">
-        <div className="container footer-bottom-inner">
-          <p>&copy; 2026 Noren Automotive. All Rights Reserved.</p>
-          <div className="footer-socials">
-            <a href="#" aria-label="Facebook"><Facebook size={18} /></a>
-            <a href="https://www.instagram.com/noren.automotive/" aria-label="Instagram"><Instagram size={18} /></a>
-            <a href="#" aria-label="Twitter"><Twitter size={18} /></a>
+      {/* Bottom Section */}
+      <div className="footer-bottom-section">
+        <div className="container footer-bottom-content">
+          <p className="copyright">&copy; 2026 Noren Automotive. All Rights Reserved.</p>
+          <div className="social-links">
+            <a href="#" aria-label="Facebook"><Facebook size={20} fill="currentColor" /></a>
+            <a href="https://www.instagram.com/noren.automotive/" aria-label="Instagram"><Instagram size={20} /></a>
+            <a href="#" aria-label="Twitter"><Twitter size={20} fill="currentColor" /></a>
           </div>
         </div>
       </div>

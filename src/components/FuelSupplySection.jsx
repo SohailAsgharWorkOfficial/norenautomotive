@@ -1,21 +1,21 @@
 import React from 'react';
-import { Clock, Fuel, ShieldCheck } from 'lucide-react';
+
 
 const solutions = [
   {
     title: 'High-Speed Diesel & Petrol',
     text: 'Reliable bulk fuel supply for commercial, industrial, transportation, and construction operations with consistent quality and dependable availability.',
-    Icon: Fuel,
+
   },
   {
     title: 'Fleet Fuel Programs',
     text: 'Tailored fuel programs designed for fleet operators and large-scale businesses, helping streamline fuel management and reduce inefficiencies.',
-    Icon: Clock,
+  
   },
   {
     title: 'Fuel Logistics & Supply Management',
     text: 'End-to-end fuel coordination, procurement, and delivery management that ensures timely supply and operational continuity.',
-    Icon: ShieldCheck,
+   
   },
 ];
 
@@ -37,9 +37,9 @@ export default function FuelSupplySection() {
         <div className="fuel-visual">
           <div className="fuel-card-stack" aria-label="Fuel solutions">
             <span>Fuel Solutions</span>
-            {solutions.map(({ title, text, Icon }) => (
+            {solutions.map(({ title, text }) => (
               <article className="fuel-solution" key={title}>
-                <Icon size={22} />
+                {/* <Icon size={22} /> */}
                 <div>
                   <h3>{title}</h3>
                   <p>{text}</p>
