@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check, ShieldCheck } from 'lucide-react';
+import { Check } from 'lucide-react';
 import Navbar from './Navbar.jsx';
 import Footer from './Footer.jsx';
 import BookingForm from './BookingForm.jsx';
@@ -53,10 +53,23 @@ const services = [
   },
 ];
 
+// image_0c6c22.png se explicit custom mapped path configuration
 const trustItems = [
-  ['Genuine Products', 'Only authentic products sourced from trusted suppliers.'],
-  ['Trusted Brands', 'Recognized brands known for quality and reliability.'],
-  ['Better Vehicle Performance', 'Quality components help your vehicle perform at its best.'],
+  {
+    title: 'Genuine Products',
+    text: 'Only authentic products sourced from trusted suppliers.',
+    iconPath: '/assets/icons/genuine-products.svg'
+  },
+  {
+    title: 'Trusted Brands',
+    text: 'Recognized brands known for quality and reliability.',
+    iconPath: '/assets/icons/trusted-brands.svg'
+  },
+  {
+    title: 'Better Vehicle Performance',
+    text: 'Quality components help your vehicle perform at its best.',
+    iconPath: '/assets/icons/vehicle-performance.svg'
+  }
 ];
 
 const fuelSolutions = [
@@ -180,12 +193,15 @@ export default function ServicesPage() {
               <div className="trusted-copy">
                 <h2>Quality you can trust</h2>
                 <div className="trust-list">
-                  {trustItems.map(([title, text]) => (
-                    <div className="trust-item" key={title}>
-                      <span><ShieldCheck size={17} /></span>
+                  {trustItems.map((item) => (
+                    <div className="trust-item" key={item.title}>
+                      {/* Image source rendering customized icon code */}
+                      <span className="trust-icon-container">
+                        <img src={item.iconPath} alt={item.title} aria-hidden="true" />
+                      </span>
                       <div>
-                        <h3>{title}</h3>
-                        <p>{text}</p>
+                        <h3>{item.title}</h3>
+                        <p>{item.text}</p>
                       </div>
                     </div>
                   ))}
