@@ -1480,6 +1480,8 @@ img {
   .service-grid,
   .vehicle-cards {
     grid-template-columns: 1fr;
+    width: min(660px, 65%);
+     /* margin: 38px auto 0; */
   }
 
   .fuel-head h2 {
@@ -5778,4 +5780,129 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+
+/* --- Services Section Mobile view Optimization --- */
+@media (max-width: 680px) {
+  /* Head layout wrapping handles */
+  .services .section-head.left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    text-align: left;
+  }
+
+  .services .section-head p {
+    margin: 6px 0 0 0;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .services .red-link {
+    width: 100%; /* Red button full width stretch */
+    height: 44px;
+    font-size: 13px;
+  }
+
+  /* Grid configuration matching image_28a73d layout */
+  .services .service-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important; /* Overwrites 65% restriction completely */
+    max-width: none !important;
+    gap: 14px !important;
+    margin-top: 24px !important;
+  }
+
+  /* Individual card structure layout updates */
+  .services .service-card {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: space-between;
+    min-height: auto !important;
+    padding: 20px 24px !important;
+    border-radius: 8px !important;
+    gap: 16px !important;
+  }
+
+  .services .service-card h3 {
+    font-size: 16px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .services .service-card p {
+    font-size: 12px !important;
+    line-height: 1.4;
+  }
+
+  /* Icon custom sizing context */
+  .services .service-card svg {
+    width: 20px !important;
+    height: 20px !important;
+    flex-shrink: 0;
+  }
+}
+
+/* --- Premium Animated Booking Processing Overlay --- */
+.booking-loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(5, 13, 33, 0.85); /* Matches deep blue background context */
+  backdrop-filter: blur(6px);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 60;
+  animation: fadeInModal 0.2s ease-out forwards;
+}
+
+/* Compact layout handle for fixed overlay rendering context */
+.booking-card-compact + .booking-loading-overlay {
+  border-radius: 11px;
+}
+
+.booking-loading-card {
+  text-align: center;
+  max-width: 280px;
+  width: 100%;
+}
+
+/* CSS CSS-only High Performance Spinner */
+.booking-spinner {
+  width: 44px;
+  height: 44px;
+  border: 3.5px solid rgba(255, 193, 7, 0.15); /* Faded yellow gap tracking */
+  border-top-color: #ffc107; /* Clear gold premium indicator line */
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  animation: spinLoader 0.8s linear infinite;
+}
+
+.loading-text-main {
+  color: #ffffff !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  margin: 0 0 6px 0 !important;
+  letter-spacing: 0.2px;
+}
+
+.loading-text-sub {
+  color: #b5bbc7 !important;
+  font-size: 11px !important;
+  line-height: 1.4 !important;
+  margin: 0 !important;
+}
+
+@keyframes spinLoader {
+  to {
+    transform: rotate(360deg);
+  }
 }

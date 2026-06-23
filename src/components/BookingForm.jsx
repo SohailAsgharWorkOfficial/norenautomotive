@@ -29,7 +29,6 @@ export default function BookingForm({ compact = false }) {
 
     setIsSending(true);
 
-    // Dynamic key-value pairs matching exactly with your template placeholders {{variable}}
     const templateParams = {
       fullName: formData.fullName,
       vehicleModel: formData.vehicleModel || 'Not Specified',
@@ -38,7 +37,6 @@ export default function BookingForm({ compact = false }) {
       location: formData.location || 'Not Specified'
     };
 
-    // explicit object sending over sendForm minimizes payload layout dropping
     emailjs.send(
       'service_5zohn2l', 
       'template_g91ty4p', 
@@ -65,6 +63,7 @@ export default function BookingForm({ compact = false }) {
     });
   };
 
+  // Premium Custom Success Modal
   const SuccessOverlay = () => (
     <div className="booking-success-overlay">
       <div className="booking-success-card">
@@ -72,6 +71,17 @@ export default function BookingForm({ compact = false }) {
         <h3>Form Submitted Successfully!</h3>
         <p>Thank you for choosing our service. Our team will contact you shortly to confirm your schedule.</p>
         <button type="button" onClick={() => setShowSuccessModal(false)}>Close</button>
+      </div>
+    </div>
+  );
+
+  // Premium Animated Processing Loader
+  const FullScreenLoader = () => (
+    <div className="booking-loading-overlay">
+      <div className="booking-loading-card">
+        <div className="booking-spinner"></div>
+        <p className="loading-text-main">Submitting Your Details</p>
+        <p className="loading-text-sub">Please wait while we secure your doorstep booking slot...</p>
       </div>
     </div>
   );
@@ -145,10 +155,11 @@ export default function BookingForm({ compact = false }) {
           </label>
 
           <button type="submit" disabled={isSending}>
-            {isSending ? 'Sending Request...' : 'Book a Service'}
+            {isSending ? 'Please wait...' : 'Book a Service'}
           </button>
         </form>
 
+        {isSending && <FullScreenLoader />}
         {showSuccessModal && <SuccessOverlay />}
       </div>
     );
@@ -229,10 +240,11 @@ export default function BookingForm({ compact = false }) {
         </label>
         
         <button type="submit" disabled={isSending}>
-          {isSending ? 'Sending Request...' : 'Book a Service'}
+          {isSending ? 'Please wait...' : 'Book a Service'}
         </button>
       </form>
 
+      {isSending && <FullScreenLoader />}
       {showSuccessModal && <SuccessOverlay />}
     </div>
   );

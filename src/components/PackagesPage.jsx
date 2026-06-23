@@ -206,6 +206,17 @@ export default function PackagesPage() {
     </div>
   );
 
+  // Full Screen Blur Loader Screen
+  const FullScreenLoader = () => (
+    <div className="booking-loading-overlay fixed-modal">
+      <div className="booking-loading-card">
+        <div className="booking-spinner"></div>
+        <p className="loading-text-main">Submitting Your Details</p>
+        <p className="loading-text-sub">Please wait while we secure your doorstep booking slot...</p>
+      </div>
+    </div>
+  );
+
   return (
     <>
       <Navbar />
@@ -389,12 +400,13 @@ export default function PackagesPage() {
                 </div>
               </div>
               <button type="submit" className="packages-submit" disabled={isSending}>
-                {isSending ? 'Processing...' : 'Book Now'}
+                {isSending ? 'Please wait...' : 'Book Now'}
               </button>
             </div>
           </form>
         </section>
 
+        {isSending && <FullScreenLoader />}
         {showSuccessModal && <SuccessOverlay />}
 
         <section className="trusted-brands">
