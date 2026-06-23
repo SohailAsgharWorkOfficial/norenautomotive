@@ -44,24 +44,65 @@ const capacityOptions = [
   ['2500cc+', 8450, 10450],
 ];
 
+// Updated Add-ons to closely align with your required structural presentation
 const addOns = [
-  { id: 'guarantee', label: '15 Days Workmanship Guarantee', price: 0 },
-  { id: 'scan', label: 'Advanced ECU Scan', price: 750 },
-  { id: 'cleaning', label: 'Fuel Injector Cleaning Add-on', price: 1200 },
-  { id: 'inspection', label: 'Full Suspension Inspection', price: 500 },
-  { id: 'flushing', label: 'Brake Fluid Flushing', price: 900 },
+  { 
+    id: 'carwash', 
+    label: 'Car Wash', 
+    description: 'Exterior wash for a clean and refreshed finish.', 
+    price: 1800, 
+    type: 'fixed',
+    iconPath: '/assets/services/car-wash.svg' // Apne asset ka sahi path yahan likhein
+  },
+  { 
+    id: 'detailing', 
+    label: 'Interior Detailing', 
+    description: 'Deep cleaning of dashboard, seats, carpets, and interior surfaces.', 
+    price: 9000, 
+    type: 'fixed',
+    iconPath: '/assets/services/interior-detailing.svg'
+  },
+  { 
+    id: 'brake', 
+    label: 'Brake Service', 
+    description: 'Brake inspection, cleaning, and adjustment service.', 
+    price: 5000, 
+    type: 'fixed',
+    iconPath: '/assets/services/brake-service.svg'
+  },
+  { 
+    id: 'acgas', 
+    label: 'AC Gas Charging', 
+    description: 'AC gas refill according to vehicle requirements.', 
+    price: 0, 
+    type: 'variable', 
+    textPrice: 'As per gas type and volume',
+    iconPath: '/assets/services/ac-gas.svg'
+  },
 ];
 
 const trustItems = [
-  ['Genuine Products', 'Only authentic products sourced from trusted suppliers.'],
-  ['Trusted Brands', 'Recognized brands known for quality and reliability.'],
-  ['Better Vehicle Performance', 'Quality components help your vehicle perform at its best.'],
+  {
+    title: 'Genuine Products',
+    text: 'Only authentic products sourced from trusted suppliers.',
+    iconPath: '/assets/services/genuine-products.svg' // Apni image ka exact path yahan daal dein
+  },
+  {
+    title: 'Trusted Brands',
+    text: 'Recognized brands known for quality and reliability.',
+    iconPath: '/assets/services/trusted-brands-icon.svg'
+  },
+  {
+    title: 'Better Vehicle Performance',
+    text: 'Quality components help your vehicle perform at its best.',
+    iconPath: '/assets/services/vehicle-performance.svg'
+  },
 ];
 
 export default function PackagesPage() {
   const [selectedPackage, setSelectedPackage] = useState('standard');
   const [selectedCapacity, setSelectedCapacity] = useState(capacityOptions[0][0]);
-  const [selectedAddOns, setSelectedAddOns] = useState(['guarantee']);
+  const [selectedAddOns, setSelectedAddOns] = useState([]);
   const [form, setForm] = useState({
     fullName: '',
     phone: '',
@@ -74,13 +115,15 @@ export default function PackagesPage() {
   const selectedPackageData = packageOptions.find((item) => item.id === selectedPackage);
   const selectedCapacityRow = capacityOptions.find(([label]) => label === selectedCapacity);
   const packageBase = selectedCapacityRow?.[selectedPackage === 'standard' ? 1 : 2] ?? 0;
+  
   const addOnTotal = selectedAddOns.reduce((sum, id) => {
     const addon = addOns.find((item) => item.id === id);
     return sum + (addon?.price ?? 0);
   }, 0);
+  
   const totalPrice = packageBase + addOnTotal;
+  
   const addOnLabels = selectedAddOns
-    .filter((id) => id !== 'guarantee')
     .map((id) => addOns.find((item) => item.id === id)?.label)
     .filter(Boolean);
 
@@ -202,24 +245,41 @@ export default function PackagesPage() {
             </div>
 
             <div className="packages-addon-title">Add-on services (optional)</div>
+            
+            {/* Updated implementation to display premium minimalist rows with checkbox fields on the far right */}
             <div className="packages-addon-list">
-              {addOns.map((addon) => (
-                <label key={addon.id} className={`packages-addon-row ${selectedAddOns.includes(addon.id) ? 'checked' : ''}`}>
-                  <div className="packages-addon-copy">
-                    <ShieldCheck size={18} />
-                    <div>
-                      <strong>{addon.label}</strong>
-                      <span>{addon.price ? `PKR ${addon.price.toLocaleString()}` : 'Included'}</span>
-                    </div>
-                  </div>
-                  <input
-                    type="checkbox"
-                    checked={selectedAddOns.includes(addon.id)}
-                    onChange={() => toggleAddOn(addon.id)}
-                  />
-                </label>
-              ))}
-            </div>
+  {addOns.map((addon) => {
+    const isChecked = selectedAddOns.includes(addon.id);
+    return (
+      <label key={addon.id} className={`packages-addon-row ${isChecked ? 'checked' : ''}`}>
+        <div className="packages-addon-copy">
+          {/* Assets folder se SVG render karne ke liye */}
+          <div className="addon-icon-container">
+            <img 
+              src={addon.iconPath} 
+              alt={addon.label} 
+              className="addon-svg-img" 
+            />
+          </div>
+          <div>
+            <strong className="addon-main-label">{addon.label}</strong>
+            <span className="addon-desc-label">{addon.description}</span>
+          </div>
+        </div>
+        <div className="packages-addon-interactive">
+          <span className="addon-price-tag">
+            {addon.type === 'variable' ? addon.textPrice : `PKR ${addon.price.toLocaleString()}`}
+          </span>
+          <input
+            type="checkbox"
+            checked={isChecked}
+            onChange={() => toggleAddOn(addon.id)}
+          />
+        </div>
+      </label>
+    );
+  })}
+</div>
 
             <div className="packages-step">
               <span>3</span>
@@ -285,18 +345,24 @@ export default function PackagesPage() {
                 <img src="/assets/services/trusted-brands.png" alt="Trusted oils, batteries, filters and brake parts" />
               </div>
               <div className="trusted-copy">
-                <h2>QUALITY YOU CAN TRUST</h2>
-                <div className="trust-list">
-                  {trustItems.map(([title, text]) => (
-                    <div className="trust-item" key={title}>
-                      <span><ShieldCheck size={17} /></span>
-                      <div>
-                        <h3>{title}</h3>
-                        <p>{text}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                <h2>Quality you can trust</h2>
+              <div className="trust-list">
+  {trustItems.map((item) => (
+    <div className="trust-item" key={item.title}>
+      <span className="trust-icon-wrap">
+        <img 
+          src={item.iconPath} 
+          alt={item.title} 
+          className="trust-svg-img" 
+        />
+      </span>
+      <div>
+        <h3>{item.title}</h3>
+        <p>{item.text}</p>
+      </div>
+    </div>
+  ))}
+</div>
               </div>
             </div>
           </div>

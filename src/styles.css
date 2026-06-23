@@ -5477,3 +5477,114 @@ img {
     text-align: center;
   }
 }
+
+/* Premium Optional Add-on Row Component Style */
+.packages-addon-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px 24px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #ffffff;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  user-select: none;
+}
+
+.packages-addon-row:hover {
+  border-color: #cbd5e1;
+  background: #fdfdfd;
+}
+
+.packages-addon-row.checked {
+  border-color: #072b80;
+  background: #f8faff;
+}
+
+.packages-addon-copy {
+  display: flex;
+  align-items: center;
+}
+
+.addon-main-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #072b80;
+  margin-bottom: 2px;
+}
+
+.addon-desc-label {
+  display: block;
+  font-size: 12px;
+  color: #687487;
+  font-weight: 400;
+}
+
+.packages-addon-interactive {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-shrink: 0;
+}
+
+.addon-price-tag {
+  font-size: 13px;
+  font-weight: 700;
+  color: #101723;
+}
+
+.packages-addon-interactive input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #072b80;
+  cursor: pointer;
+  margin: 0;
+}
+
+.packages-addon-copy {
+  display: flex;
+  align-items: center;
+}
+
+.addon-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px; /* Appx width screenshot ke mutabik */
+  height: 48px;
+  margin-right: 16px;
+  flex-shrink: 0;
+}
+
+.addon-svg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+.trust-item {
+  display: grid;
+  grid-template-columns: 42px 1fr; /* Icon wrapper space layout */
+  gap: 18px;
+  align-items: start;
+  margin-bottom: 24px;
+}
+
+.trust-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+}
+
+.trust-svg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
