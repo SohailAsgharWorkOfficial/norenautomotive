@@ -4,9 +4,12 @@ export const assets = {
   bookingLogo: '',
   howItWorks: '/assets/placeholder-how-it-works-car.png',
   testimonialAvatars: [
+     '/assets/testimonials/avatar-hassan.svg',
     '/assets/testimonials/avatar-ali.svg',
     '/assets/testimonials/avatar-ahmed.svg',
     '/assets/testimonials/avatar-usman.svg',
+    '/assets/testimonials/avatar-shahid.svg',
+
   ],
   vehicles: {
     hatchback: '/assets/vehicles/hatchback.png',

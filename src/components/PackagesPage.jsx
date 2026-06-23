@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { Check, CircleDot, MapPin, ShieldCheck, Sparkles, Wrench } from 'lucide-react';
 import Navbar from './Navbar.jsx';
 import Footer from './Footer.jsx';
@@ -44,7 +45,6 @@ const capacityOptions = [
   ['2500cc+', 8450, 10450],
 ];
 
-// Updated Add-ons to closely align with your required structural presentation
 const addOns = [
   { 
     id: 'carwash', 
@@ -52,7 +52,7 @@ const addOns = [
     description: 'Exterior wash for a clean and refreshed finish.', 
     price: 1800, 
     type: 'fixed',
-    iconPath: '/assets/services/car-wash.svg' // Apne asset ka sahi path yahan likhein
+    iconPath: '/assets/services/car-wash.svg'
   },
   { 
     id: 'detailing', 
@@ -85,7 +85,7 @@ const trustItems = [
   {
     title: 'Genuine Products',
     text: 'Only authentic products sourced from trusted suppliers.',
-    iconPath: '/assets/services/genuine-products.svg' // Apni image ka exact path yahan daal dein
+    iconPath: '/assets/services/genuine-products.svg'
   },
   {
     title: 'Trusted Brands',
@@ -103,6 +103,9 @@ export default function PackagesPage() {
   const [selectedPackage, setSelectedPackage] = useState('standard');
   const [selectedCapacity, setSelectedCapacity] = useState(capacityOptions[0][0]);
   const [selectedAddOns, setSelectedAddOns] = useState([]);
+  const [isSending, setIsSending] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+
   const [form, setForm] = useState({
     fullName: '',
     phone: '',
@@ -142,6 +145,67 @@ export default function PackagesPage() {
     [addOnLabels.length, selectedCapacity, selectedPackageData.title]
   );
 
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    
+    if (!form.fullName || !form.phone || !form.date) {
+      alert("Please fill in all required fields (*)");
+      return;
+    }
+
+    setIsSending(true);
+
+    const templateParams = {
+      fullName: form.fullName,
+      phone: form.phone,
+      email: form.email || 'Not Provided',
+      date: form.date,
+      address: form.address || 'Not Provided',
+      notes: form.notes || 'None',
+      selectedPackage: selectedPackageData.title,
+      selectedCapacity: selectedCapacity,
+      selectedAddOns: addOnLabels.length > 0 ? addOnLabels.join(', ') : 'None Selected',
+      totalPrice: totalPrice.toLocaleString()
+    };
+
+    emailjs.send(
+      'service_5zohn2l',
+      'template_cnqmyzq', 
+      templateParams,
+      'cNvwtejgQVDcKq5Ur'
+    )
+    .then(() => {
+      setShowSuccessModal(true);
+      setSelectedAddOns([]);
+      setForm({
+        fullName: '',
+        phone: '',
+        email: '',
+        date: '',
+        address: '',
+        notes: '',
+      });
+    })
+    .catch((err) => {
+      console.error('Submission Failed:', err);
+      alert("Something went wrong. Please check your network or try again.");
+    })
+    .finally(() => {
+      setIsSending(false);
+    });
+  };
+
+  const SuccessOverlay = () => (
+    <div className="booking-success-overlay fixed-modal">
+      <div className="booking-success-card">
+        <div className="success-icon-badge">✓</div>
+        <h3>Package Booked Successfully!</h3>
+        <p>Your vehicle maintenance request has been submitted. Our team will contact you shortly to confirm your slot.</p>
+        <button type="button" onClick={() => setShowSuccessModal(false)}>Close</button>
+      </div>
+    </div>
+  );
+
   return (
     <>
       <Navbar />
@@ -155,7 +219,7 @@ export default function PackagesPage() {
               location anywhere in Karachi.
             </p>
             <div className="services-hero-actions">
-              <a href="#packages-book" className="services-primary-btn">Book a Service</a>
+              <a href="#packages" className="services-primary-btn">Book a Service</a>
               <a href="#packages" className="services-outline-btn">Get a Free Quote</a>
             </div>
           </div>
@@ -182,7 +246,7 @@ export default function PackagesPage() {
         </section>
 
         <section className="packages-builder" id="packages">
-          <div className="container packages-panel">
+          <form onSubmit={handleFormSubmit} className="container packages-panel">
             <div className="packages-step">
               <span>1</span>
               <h3>Choose your package</h3>
@@ -246,40 +310,38 @@ export default function PackagesPage() {
 
             <div className="packages-addon-title">Add-on services (optional)</div>
             
-            {/* Updated implementation to display premium minimalist rows with checkbox fields on the far right */}
             <div className="packages-addon-list">
-  {addOns.map((addon) => {
-    const isChecked = selectedAddOns.includes(addon.id);
-    return (
-      <label key={addon.id} className={`packages-addon-row ${isChecked ? 'checked' : ''}`}>
-        <div className="packages-addon-copy">
-          {/* Assets folder se SVG render karne ke liye */}
-          <div className="addon-icon-container">
-            <img 
-              src={addon.iconPath} 
-              alt={addon.label} 
-              className="addon-svg-img" 
-            />
-          </div>
-          <div>
-            <strong className="addon-main-label">{addon.label}</strong>
-            <span className="addon-desc-label">{addon.description}</span>
-          </div>
-        </div>
-        <div className="packages-addon-interactive">
-          <span className="addon-price-tag">
-            {addon.type === 'variable' ? addon.textPrice : `PKR ${addon.price.toLocaleString()}`}
-          </span>
-          <input
-            type="checkbox"
-            checked={isChecked}
-            onChange={() => toggleAddOn(addon.id)}
-          />
-        </div>
-      </label>
-    );
-  })}
-</div>
+              {addOns.map((addon) => {
+                const isChecked = selectedAddOns.includes(addon.id);
+                return (
+                  <label key={addon.id} className={`packages-addon-row ${isChecked ? 'checked' : ''}`}>
+                    <div className="packages-addon-copy">
+                      <div className="addon-icon-container">
+                        <img 
+                          src={addon.iconPath} 
+                          alt={addon.label} 
+                          className="addon-svg-img" 
+                        />
+                      </div>
+                      <div>
+                        <strong className="addon-main-label">{addon.label}</strong>
+                        <span className="addon-desc-label">{addon.description}</span>
+                      </div>
+                    </div>
+                    <div className="packages-addon-interactive">
+                      <span className="addon-price-tag">
+                        {addon.type === 'variable' ? addon.textPrice : `PKR ${addon.price.toLocaleString()}`}
+                      </span>
+                      <input
+                        type="checkbox"
+                        checked={isChecked}
+                        onChange={() => toggleAddOn(addon.id)}
+                      />
+                    </div>
+                  </label>
+                );
+              })}
+            </div>
 
             <div className="packages-step">
               <span>3</span>
@@ -288,19 +350,19 @@ export default function PackagesPage() {
             <div className="packages-form-grid">
               <label>
                 <span>Full Name *</span>
-                <input value={form.fullName} onChange={(e) => setForm({ ...form, fullName: e.target.value })} placeholder="Enter your full name" />
+                <input required value={form.fullName} onChange={(e) => setForm({ ...form, fullName: e.target.value })} placeholder="Enter your full name" />
               </label>
               <label>
                 <span>Phone Number *</span>
-                <input value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="03xx - xxxxxxx" />
+                <input type="tel" required value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} placeholder="03xx - xxxxxxx" />
               </label>
               <label>
                 <span>Email Address (optional)</span>
-                <input value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="Enter your email" />
+                <input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="Enter your email" />
               </label>
               <label>
                 <span>Select Date *</span>
-                <input type="date" value={form.date} onChange={(e) => setForm({ ...form, date: e.target.value })} />
+                <input type="date" required value={form.date} onChange={(e) => setForm({ ...form, date: e.target.value })} />
               </label>
               <label className="span-2">
                 <span>Enter Your Address</span>
@@ -326,10 +388,14 @@ export default function PackagesPage() {
                   <strong>PKR {totalPrice.toLocaleString()}</strong>
                 </div>
               </div>
-              <button type="button" className="packages-submit">Book Now</button>
+              <button type="submit" className="packages-submit" disabled={isSending}>
+                {isSending ? 'Processing...' : 'Book Now'}
+              </button>
             </div>
-          </div>
+          </form>
         </section>
+
+        {showSuccessModal && <SuccessOverlay />}
 
         <section className="trusted-brands">
           <div className="container">
@@ -346,23 +412,23 @@ export default function PackagesPage() {
               </div>
               <div className="trusted-copy">
                 <h2>Quality you can trust</h2>
-              <div className="trust-list">
-  {trustItems.map((item) => (
-    <div className="trust-item" key={item.title}>
-      <span className="trust-icon-wrap">
-        <img 
-          src={item.iconPath} 
-          alt={item.title} 
-          className="trust-svg-img" 
-        />
-      </span>
-      <div>
-        <h3>{item.title}</h3>
-        <p>{item.text}</p>
-      </div>
-    </div>
-  ))}
-</div>
+                <div className="trust-list">
+                  {trustItems.map((item) => (
+                    <div className="trust-item" key={item.title}>
+                      <span className="trust-icon-wrap">
+                        <img 
+                          src={item.iconPath} 
+                          alt={item.title} 
+                          className="trust-svg-img" 
+                        />
+                      </span>
+                      <div>
+                        <h3>{item.title}</h3>
+                        <p>{item.text}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

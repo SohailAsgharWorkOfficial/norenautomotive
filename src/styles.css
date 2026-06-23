@@ -5669,3 +5669,113 @@ img {
     margin: 0;
   }
 }
+
+/* Custom Select dropdown matching styling */
+.booking-card select {
+  color: #ffffff !important; /* Main fallback container text color */
+  background-color: transparent;
+}
+
+/* Dropdown options wrapper styling (Options black text ke sath readable rahengi) */
+.booking-card select option {
+  background-color: #101723; /* Dark premium background for popup items */
+  color: #ffffff; /* Options text layer list appearance color */
+}
+
+/* Disabled/Placeholder item style configuration */
+.booking-card select option[disabled] {
+  color: rgba(255, 255, 255, 0.56);
+}
+
+
+/* Success Modal Styling Framework */
+.booking-success-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(5, 11, 26, 0.88);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 50;
+  animation: fadeInModal 0.25s ease-out forwards;
+}
+
+.booking-success-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 32px 24px;
+  text-align: center;
+  max-width: 340px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.success-icon-badge {
+  width: 56px;
+  height: 56px;
+  background: #10b981; /* Premium Emerald Green Success color */
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 18px;
+}
+
+.booking-success-card h3 {
+  color: #101723 !important;
+  font-size: 18px !important;
+  font-weight: 800;
+  margin: 0 0 10px 0 !important;
+}
+
+.booking-success-card p {
+  color: #4b5563 !important;
+  font-size: 12px !important;
+  line-height: 1.5;
+  margin: 0 0 22px 0 !important;
+}
+
+.booking-success-card button {
+  width: 100%;
+  height: 38px;
+  background: #082a7c;
+  color: #ffffff;
+  border: 0;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.booking-success-card button:hover {
+  background: #061f5c;
+}
+
+@keyframes fadeInModal {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+
+.booking-success-overlay.fixed-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: rgba(10, 23, 55, 0.75);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
