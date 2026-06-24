@@ -140,6 +140,7 @@ img {
   left: 0;
   right: 0;
   height: 55px;
+  border-radius: 60px;
   background: #05153b;
   color: white;
   box-shadow: 0 10px 28px rgba(0, 0, 0, .18);
@@ -3357,7 +3358,7 @@ img {
 }
 
 .services-hero {
-  min-height: 500px;
+  min-height: 400px;
   padding: 120px 0 46px;
   background:
     linear-gradient(90deg, rgba(0, 0, 0, .66) 0%, rgba(0, 0, 0, .42) 46%, rgba(0, 0, 0, .18) 100%),
@@ -3371,7 +3372,7 @@ img {
 }
 
 .services-hero h1 {
-  padding-top: 40px;
+  /* padding-top: 40px; */
   max-width: 900px;
   margin: 0 0 24px;
   color: #fff;
@@ -3896,7 +3897,7 @@ img {
   padding: 120px 0 46px;
   background:
     linear-gradient(90deg, rgba(0, 0, 0, .66) 0%, rgba(0, 0, 0, .42) 46%, rgba(0, 0, 0, .18) 100%),
-    url('/assets/services/hero-service-page.png') center / cover no-repeat;
+    url('/assets/services/packages-hero.png') center / cover no-repeat;
   color: #fff;
 }
 
@@ -3905,7 +3906,7 @@ img {
 }
 
 .packages-hero h1 {
-  max-width: 760px;
+  max-width: 740px;
   margin: 0 0 24px;
   color: #fff;
   font-size: 38px;
@@ -4537,7 +4538,7 @@ img {
   padding: 118px 0 74px;
   background:
     linear-gradient(90deg, rgba(0, 0, 0, .78) 0%, rgba(0, 0, 0, .55) 42%, rgba(0, 0, 0, .22) 72%, rgba(0, 0, 0, .34) 100%),
-    url('/assets/services/hero-service-page.png') center / cover no-repeat;
+    url('/assets/services/about-hero.png') center / cover no-repeat;
   color: #fff;
 }
 
@@ -4582,8 +4583,8 @@ img {
   content: '';
   position: absolute;
   z-index: 0;
-  right: -42px;
-  bottom: 0;
+  right: -12px;
+  bottom: 12px;
   width: 72%;
   height: 76%;
   border-radius: 7px;
@@ -4594,8 +4595,8 @@ img {
   position: relative;
   z-index: 1;
   width: 100%;
-  border-radius: 5px;
-  box-shadow: 0 18px 30px rgba(0, 0, 0, .18);
+  /* border-radius: 5px; */
+  /* box-shadow: 0 18px 30px rgba(0, 0, 0, .18); */
 }
 
 .about-story-copy h2,
@@ -4724,7 +4725,8 @@ img {
 .about-difference-card img {
   width: 100%;
   min-height: 300px;
-  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+  /* object-fit: cover; */
   object-position: center;
 }
 
@@ -4810,11 +4812,11 @@ img {
 }
 
 .faq-page-hero {
-  min-height: 560px;
+  min-height: 250px;
   padding: 174px 0 92px;
   background:
     linear-gradient(90deg, rgba(0, 0, 0, .72) 0%, rgba(0, 0, 0, .46) 44%, rgba(0, 0, 0, .2) 100%),
-    url('/assets/home-hero.png') center / cover no-repeat;
+    url('/assets/faq-hero.png') center / cover no-repeat;
   color: #fff;
 }
 
@@ -4826,7 +4828,7 @@ img {
   max-width: 760px;
   margin: 0 0 26px;
   color: #fff;
-  font-size: 56px;
+  font-size: 50px;
   line-height: 1.08;
   font-weight: 800;
 }
@@ -5906,3 +5908,648 @@ img {
     transform: rotate(360deg);
   }
 }
+
+.layout-comparison-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr 320px;
+  min-height: 320px;
+  background: #f1f3f7; /* Container base wrap styling */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.comparison-panel {
+  padding: 36px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.traditional-workshop-box {
+  background: #e2e4e8;
+  color: #111;
+}
+
+.traditional-workshop-box h3 {
+  color: #e21b2d; /* Traditional Workshop Accent color */
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.noren-automotive-box {
+  background: #082a7c; /* Brand Dark Royal Blue container */
+  color: #ffffff;
+}
+
+.noren-automotive-box h3 {
+  color: #ffffff;
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.comparison-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 14px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.comparison-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-red {
+  color: #e21b2d;
+}
+
+.icon-white {
+  color: #ffffff;
+}
+
+.comparison-media-bridge {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+}
+
+.media-bg-left, .media-bg-right {
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
+
+@media (max-width: 980px) {
+  .layout-comparison-grid {
+    grid-template-columns: 1fr;
+  }
+  .comparison-media-bridge {
+    height: 200px;
+  }
+}
+
+/* --- image_89ccc1.jpg Exact Layout Match Framework --- */
+.image-comparison-wrapper {
+  position: relative;
+  display: grid;
+  /* Left panel, central image blocks, and right panel ratios */
+  grid-template-columns: 240px 1fr 280px;
+  min-height: 280px;
+  background: #f3f4f6;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Base Content Panels */
+.comparison-card-panel {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 32px 24px;
+}
+
+.comparison-card-panel .content-inner {
+  position: relative;
+  z-index: 10;
+}
+
+/* Traditional Section Slanted Left Overlay styling */
+.traditional-box-overlay {
+  background: #f7f7f7;
+  padding-right: 12px;
+}
+
+.traditional-box-overlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -35px;
+  width: 50px;
+  height: 100%;
+  background: #f7f7f7;
+  transform: skewX(-12deg); /* Dynamic slanting layout line matching left box */
+  z-index: 1;
+}
+
+.traditional-title {
+  color: #df1b2a;
+  font-size: 16px;
+  font-weight: 800;
+  margin: 0 0 18px 0;
+  letter-spacing: -0.2px;
+}
+
+/* Noren Section Slanted Right Overlay styling */
+.noren-box-overlay {
+  background: #14356a;
+  color: #ffffff;
+  padding-left: 28px;
+}
+
+.noren-box-overlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -25px;
+  width: 40px;
+  height: 100%;
+  background: #14356a;
+  transform: skewX(-12deg); /* Perfect geometric parity for Noren panel anchor */
+  z-index: 1;
+}
+
+.noren-title {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 18px 0;
+  letter-spacing: -0.2px;
+}
+
+/* Lists and Bullets alignment */
+.comparison-bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 13px;
+}
+
+.comparison-bullet-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.traditional-bullets li {
+  color: #374151;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding-bottom: 4px;
+}
+
+.traditional-bullets li:last-child {
+  border-bottom: 0;
+}
+
+.noren-bullets li {
+  color: #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 4px;
+}
+
+.noren-bullets li:last-child {
+  border-bottom: 0;
+}
+
+/* Icon custom accent badges colors */
+.badge-x-red {
+  color: #df1b2a;
+  flex-shrink: 0;
+}
+
+.badge-check-white {
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+/* Central Image Media Grid */
+.comparison-images-bridge {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  z-index: 2;
+  gap: 4px; /* Soft hairline division */
+}
+
+.split-img-panel {
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+}
+
+/* --- Responsive Breakpoint adjustments --- */
+@media (max-width: 980px) {
+  .image-comparison-wrapper {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  
+  .traditional-box-overlay::after,
+  .noren-box-overlay::after {
+    display: none; /* Mobile UI folds slants safely into stacking items */
+  }
+
+  .comparison-images-bridge {
+    height: 180px;
+  }
+}
+
+@media (max-width: 520px) {
+  .comparison-bullet-list li {
+    white-space: normal; /* text wraps cleaner on smaller mobile screen ratios */
+  }
+}
+
+
+.about-story-photo-wrapper {
+  position: relative;
+  padding: 0 0 32px 0; /* Base structural clearance for layout anchors */
+}
+
+/* Image box relative alignment frame */
+.about-story-photo {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  width: 100%;
+}
+
+.about-story-photo img {
+  width: 100%;
+  border-radius: 8px;
+  /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); */
+}
+
+/* Floating Blue Feature Strip System (image_8b4803.jpg Perfect Parity) */
+.photo-floating-counter-strip {
+  position: absolute;
+  bottom: 24px;
+  left: -24px; 
+  z-index: 10;
+  width: calc(100% + 12px);
+  max-width: 420px;
+  min-height: 76px;
+  background: #062363; 
+  border-radius: 8px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 12px 32px rgba(6, 35, 99, 0.22);
+}
+
+
+.counter-notification-badge {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  background: #e21b2d;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+/* Micro-badge inner core rendering indicator line */
+.badge-pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: block;
+}
+
+/* Counter text parameters settings */
+.counter-strip-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.counter-strip-copy h4 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.counter-strip-copy p {
+  margin: 0 !important;
+  color: #ccd5e6 !important;
+  font-size: 11px !important;
+  line-height: 1.2 !important;
+  font-weight: 400;
+}
+
+/* Layout Action button match alignment text code */
+.book-service-btn-accent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 210px;
+  height: 46px;
+  border-radius: 4px;
+  background: #e21b2d;
+  color: #ffffff !important;
+  font-size: 13px;
+  font-weight: 800;
+  box-shadow: 0 4px 14px rgba(226, 27, 45, 0.2);
+  transition: background 0.2s ease-in-out;
+}
+
+.book-service-btn-accent:hover {
+  background: #c51222;
+}
+
+/* --- Responsive Layout Optimization < 980px Tablet and Mobiles --- */
+@media (max-width: 980px) {
+  .photo-floating-counter-strip {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    margin-top: 16px;
+    width: 100%;
+    max-width: none;
+  }
+}
+
+/* ==========================================================================
+   20. MODULAR VIEWS: ABOUT US PAGE INTERFACE RULES (Principles Matrix Patch)
+   ========================================================================== */
+
+.about-principles {
+  padding: 64px 0 74px;
+  background: #082a7c; /* Exact dark layout blue matching your template theme */
+  color: #ffffff;
+}
+
+.principles-main-title {
+  margin: 0 0 48px 0;
+  text-align: center;
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+/* Linear Grid Row Split definition matching image_be8343.png horizontal alignment */
+.blueprint-aligned-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0 24px; /* No gap clipping, space managed through row containers */
+}
+
+/* Individual Card Blocks configuration */
+.segment-pillar {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start;
+  gap: 16px;
+  position: relative;
+  padding-right: 12px;
+}
+
+/* Left structural layout borders injection matching mockup fine white line lines */
+.segment-pillar:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  right: -12px;
+  width: 1px;
+  height: 80%;
+  background: rgba(255, 255, 255, 0.18); /* Soft semi-transparent vertical bridge line */
+}
+
+.pillar-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.principle-svg-node {
+  color: #ffffff;
+  stroke-width: 1.5px; /* Clean thin linear contour vector line */
+}
+
+.pillar-text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pillar-text-group h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.pillar-text-group p {
+  margin: 0 !important;
+  color: #dbe2f3 !important; /* Low high-contrast soft description text rendering */
+  font-size: 12px !important;
+  line-height: 1.45 !important;
+  font-weight: 400;
+}
+
+
+/* --- Responsive Mobile Optimization Viewport Overrides --- */
+@media (max-width: 980px) {
+  .blueprint-aligned-row {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 36px 20px;
+  }
+
+  .segment-pillar::after {
+    display: none !important; /* Vertical borders clear securely inside tablet fold grids */
+  }
+}
+
+@media (max-width: 560px) {
+  .blueprint-aligned-row {
+    grid-template-columns: 1fr !important;
+    gap: 28px 0;
+  }
+  
+  .principles-main-title {
+    font-size: 24px;
+    margin-bottom: 32px;
+  }
+}
+
+/* Custom SVG node vector dimensions controller */
+.trust-svg-node {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  display: block;
+}
+
+/* ==========================================================================
+   26. MODULAR VIEWS: ABOUT US PAGE (Unified Background Parity Layers)
+   ========================================================================== */
+
+.unified-comparison-panel-frame {
+  position: relative;
+  display: grid;
+  /* Columns match left block layout, visible center img view, and right panel */
+  grid-template-columns: 280px 1fr 340px; 
+  min-height: 340px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+}
+
+.side-overlay-container {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 24px;
+}
+
+.overlay-content-wrapper {
+  position: relative;
+  z-index: 10;
+}
+
+/* Left panel text wash styles */
+.traditional-matte-tint {
+  background: linear-gradient(90deg, #E0DFDF 100%, rgba(247, 247, 247, 0.96) 80%, rgba(247, 247, 247, 0.8) 100%);
+}
+
+.traditional-matte-tint::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -37px;
+  width: 80px;
+  height: 100%;
+  background: #E0DFDF;
+  transform: skewX(-12deg); /* Keeps the signature layout line look */
+  z-index: 1;
+}
+
+/* Right panel precise angular cuts styling match */
+.noren-slanted-blue-block {
+  background: #183251; /* Solid layout template blue theme base color */
+  color: #ffffff;
+}
+
+.noren-slanted-blue-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -35px;
+  width: 80px;
+  height: 100%;
+  background: #183251;
+  transform: skewX(-12deg); /* Dynamic geometric line alignment */
+  z-index: 1;
+}
+
+.padding-left-slant {
+  padding-left: 20px; /* Protects typography boundaries from overlapping slant edge */
+}
+
+/* Typography Matrix controls inside comparison module */
+.comparison-headline {
+  margin: 0 0 20px 0;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+  line-height: 1.1;
+}
+
+.text-red { color: #e21b2d; }
+.text-white { color: #ffffff; }
+
+.comparison-bullet-matrix {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.comparison-bullet-matrix li {
+  display: grid;
+  grid-template-columns: 14px 1fr;
+  gap: 10px;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.traditional-matte-tint .comparison-bullet-matrix li {
+  color: #1a2332;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  padding-bottom: 4px;
+}
+
+.noren-slanted-blue-block .comparison-bullet-matrix li {
+  color: #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 4px;
+}
+
+.comparison-bullet-matrix li:last-child {
+  border-bottom: 0 !important;
+}
+
+.badge-icon-red { color: #e21b2d; stroke-width: 3.5px; }
+.badge-icon-white { color: #ffffff; stroke-width: 3.5px; }
+
+/* Mid-gap view frame structural box link */
+.transparent-image-viewport-center {
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* --- Responsive Adaptations System --- */
+@media (max-width: 980px) {
+  .unified-comparison-panel-frame {
+    grid-template-columns: 1fr;
+    background-image: none !important; /* Clears heavy responsive overlapping structures safely */
+  }
+
+  .traditional-matte-tint::after,
+  .noren-slanted-blue-block::before {
+    display: none !important;
+  }
+  
+  .padding-left-slant {
+    padding-left: 0;
+  }
+
+  .traditional-matte-tint {
+    background: #f7f7f7;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .noren-slanted-blue-block {
+    background: #082a7c;
+    border-radius: 0 0 12px 12px;
+  }
+
+  .comparison-bullet-matrix li {
+    white-space: normal;
+  }
+}
+
+
+
+
+

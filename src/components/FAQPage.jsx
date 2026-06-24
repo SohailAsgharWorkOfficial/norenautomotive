@@ -141,32 +141,61 @@ export default function FAQPage() {
           </div>
         </section>
 
-        <section className="faq-service-cta" id="book">
-          <div className="container faq-service-cta-inner">
-            <div className="faq-service-copy">
-              <h2>Book Your Service Today</h2>
-              <p>
-                Keep your vehicle running smoothly with professional automotive care delivered directly
-                to your home, office, or preferred location. Fast, reliable, and hassle-free service
-                whenever you need it.
-              </p>
-              <div className="faq-benefits">
-                {benefits.map(({ title, iconImg }) => (
-                  <div key={title}>
-                    <img 
-                      src={iconImg} 
-                      alt={title} 
-                      style={{ width: '34px', height: '34px', display: 'block', objectFit: 'contain' }} 
-                    />
-                    <strong>{title}</strong>
-                  </div>
-                ))}
-              </div>
-              <a href="/#contact">Contact Us</a>
-            </div>
-            <img src="/assets/faq/faq-cta-visual.png" alt="Noren Automotive technician with car" />
-          </div>
-        </section>
+        {/* 6. BOOK YOUR SERVICE TODAY (PIXEL PERFECT GEOMETRIC INTERFACE) */}
+<section className="faq-service-cta" id="book">
+  <div className="container faq-service-cta-inner layout-geometric-curve-wrapper">
+    
+    {/* Left Panel: Content Content Wrap */}
+    <div className="faq-service-copy curved-content-shield">
+      <h2>Book Your Service Today</h2>
+      <p>
+        Keep your vehicle running smoothly with professional automotive care delivered directly
+        to your home, office, or preferred location. Fast, reliable, and hassle-free service
+        whenever you need it.
+      </p>
+      
+      {/* 3 Columns Benefits Matrix with direct SVG paths */}
+      <div className="faq-benefits benefits-trio-grid">
+        <div>
+          {/* <img 
+            src="/assets/faq/certified-technicians.svg" 
+            alt="Certified Technicians" 
+            className="faq-benefit-svg-asset" 
+          /> */}
+          <strong>Certified Technicians</strong>
+        </div>
+        <div>
+          {/* <img 
+            src="/assets/faq/certified-technicians.svg" 
+            alt="Doorstep Convenience" 
+            className="faq-benefit-svg-asset" 
+          /> */}
+          <strong>Doorstep Convenience</strong>
+        </div>
+        <div>
+          {/* <img 
+            src="/assets/faq/transparent-pricing.svg" 
+            alt="Transparent Pricing" 
+            className="faq-benefit-svg-asset" 
+          /> */}
+          <strong>Transparent Pricing</strong>
+        </div>
+      </div>
+      
+      <a href="/#contact" className="contact-us-trigger-btn">Contact Us</a>
+    </div>
+    
+    {/* Right Panel: Standalone PNG Transparent Cutout Overlay */}
+    <div className="faq-service-visual-overlay">
+      <img 
+        src="/assets/faq/faq-cta-visual.png" 
+        alt="Noren Automotive expert technician with sedan cutout visual" 
+        className="curved-section-cutout-img"
+      />
+    </div>
+
+  </div>
+</section>
 
         <section className="faq-subscribe">
           <div className="container faq-subscribe-inner">
