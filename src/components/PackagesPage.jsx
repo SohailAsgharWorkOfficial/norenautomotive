@@ -169,10 +169,10 @@ export default function PackagesPage() {
     };
 
     emailjs.send(
-      'service_5zohn2l',
-      'template_cnqmyzq', 
+      'service_vlpipyn',
+      'template_ctk16o4', 
       templateParams,
-      'cNvwtejgQVDcKq5Ur'
+      'wUp-MhJu7lQHGo4hp'
     )
     .then(() => {
       setShowSuccessModal(true);

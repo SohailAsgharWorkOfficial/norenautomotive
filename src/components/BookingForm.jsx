@@ -38,10 +38,10 @@ export default function BookingForm({ compact = false }) {
     };
 
     emailjs.send(
-      'service_5zohn2l', 
-      'template_g91ty4p', 
+      'service_vlpipyn', 
+      'template_lxywaij', 
       templateParams,
-      'cNvwtejgQVDcKq5Ur'
+      'wUp-MhJu7lQHGo4hp'
     )
     .then((response) => {
       console.log('SUCCESS!', response.status, response.text);
