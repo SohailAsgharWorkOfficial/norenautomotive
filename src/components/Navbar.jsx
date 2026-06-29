@@ -38,7 +38,7 @@ export default function Navbar({ className = '' }) {
           <a className={isPackagesPage ? 'active' : undefined} href="/packages" onClick={() => setIsMenuOpen(false)}>Packages</a>
           <a className={isAboutPage ? 'active' : undefined} href="/about" onClick={() => setIsMenuOpen(false)}>About</a>
           <a className={isFAQPage ? 'active' : undefined} href="/faq" onClick={() => setIsMenuOpen(false)}>FAQs</a>
-          <a href="/#contact" onClick={() => setIsMenuOpen(false)}>Contact</a>
+          <a href="/contact" onClick={() => setIsMenuOpen(false)}>Contact</a>
         </nav>
 
         {/* Desktop CTA Element */}

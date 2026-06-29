@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { X } from 'lucide-react';
 
-const whatsappNumber = '923185546469';
+const whatsappNumber = '923141133859';
 const message = encodeURIComponent('Hello Noren Automotive, I want to chat with the store owner.');
 
 export default function WhatsAppFloat() {

@@ -17,6 +17,8 @@ import PackagesPage from './components/PackagesPage.jsx';
 import AboutPage from './components/AboutPage.jsx';
 import FAQPage from './components/FAQPage.jsx';
 import WhatsAppFloat from './components/WhatsAppFloat.jsx';
+import ContactPage from './components/ContactPage.jsx';
+
 
 export default function App() {
   const path = window.location.pathname;
@@ -24,6 +26,7 @@ export default function App() {
   const isPackagesPage = path === '/packages';
   const isAboutPage = path === '/about';
   const isFAQPage = path === '/faq';
+  const isContactPage = path === '/contact';
 
   if (isServicesPage) {
     return (
@@ -60,6 +63,15 @@ export default function App() {
       </>
     );
   }
+
+  if (isContactPage) {
+  return (
+    <>
+      <ContactPage />
+      <WhatsAppFloat />
+    </>
+  );
+}
 
   return (
     <>
